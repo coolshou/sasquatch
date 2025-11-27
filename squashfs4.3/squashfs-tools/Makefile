@@ -75,7 +75,7 @@ LZO_SUPPORT = 1
 LZMA_SUPPORT = 1
 # CJH: Added LZMA_BASE_DIR
 LZMA_BASE_DIR = ./LZMA
-LZMA_DIR = $(LZMA_BASE_DIR)/lzma465
+LZMA_DIR = $(LZMA_BASE_DIR)/lzma2501
 # CJH: Added these too...
 LZMA_ALT_DIR = $(LZMA_BASE_DIR)/lzmalt
 LZMA_ADAPT_DIR = $(LZMA_BASE_DIR)/lzmadaptive/C/7zip/Compress/LZMA_Lib
@@ -141,6 +141,8 @@ ifeq ($(LZMA_SUPPORT),1)
 # CJH: Added -llzmalib
 LIBS += -L$(LZMA_ADAPT_DIR) -llzmalib 
 LZMA_OBJS = $(LZMA_DIR)/C/Alloc.o $(LZMA_DIR)/C/LzFind.o \
+	$(LZMA_DIR)/C/CpuArch.o $(LZMA_DIR)/C/LzFindMt.o \
+	$(LZMA_DIR)/C/Threads.o $(LZMA_DIR)/C/LzFindOpt.o\
 	$(LZMA_DIR)/C/LzmaDec.o $(LZMA_DIR)/C/LzmaEnc.o $(LZMA_DIR)/C/LzmaLib.o
 # CJH: Added LZMA variant directories
 INCLUDEDIR += -I$(LZMA_DIR)/C -I$(LZMA_ALT_DIR) -I$(LZMA_ADAPT_DIR)
