@@ -17,14 +17,16 @@ Prerequisites
 You need a C/C++ compiler, plus the liblzma, liblzo and zlib development libraries:
 
 ```bash
-$ sudo apt-get install build-essential liblzma-dev liblzo2-dev zlib1g-dev
+ sudo apt update
+ sudo apt-get install build-essential liblzma-dev liblzo2-dev zlib1g-dev dpkg-dev
 ```
 
 Installation
 ============
 
-The included `build.sh` script will download squashfs-tools v4.3, patch the source, then build and install `sasquatch`:
+The included `build_deb.sh` script will build the deb pachage:
 
 ```bash
-$ ./build.sh
+ ./build_deb.sh
+ sudo dpkg -i ../sasquatch_4.3-1_amd64.deb
 ```
