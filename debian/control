@@ -1,0 +1,23 @@
+Source: sasquatch
+Section: utility
+Priority: optional
+Maintainer: coolshou <coolshou2060@gmail.com>
+Rules-Requires-Root: no
+Build-Depends:
+ debhelper-compat (= 13), build-essential,
+ liblzma-dev, liblzo2-dev, zlib1g-dev
+Standards-Version: 4.6.2
+Homepage: https://github.com/coolshou/sasquatch
+#Vcs-Browser: https://salsa.debian.org/debian/sasquatch
+#Vcs-Git: https://salsa.debian.org/debian/sasquatch.git
+
+Package: sasquatch
+Architecture: any
+Multi-Arch: foreign
+Depends:
+ ${shlibs:Depends},
+ ${misc:Depends},
+Description: a unsquashfs utility that support many hacked-up vendor-specific SquashFS implementations.
+ The sasquatch project is a set of patches to the standard unsquashfs utility
+ (part of squashfs-tools) that attempts to add support for as many hacked-up
+ vendor-specific SquashFS implementations as possible.
