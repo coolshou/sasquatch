@@ -1832,9 +1832,9 @@ int read_super(char *source)
     }
 
     // CJH: Notify if endianess is different
-    if(swap)
+    if(swap){
         ERROR("Reading a different endian SQUASHFS filesystem on %s\n", source);
-
+	}
 	/*
 	 * Try to read a Squashfs 4 superblock
 	 */
